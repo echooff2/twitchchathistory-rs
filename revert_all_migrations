@@ -1,0 +1,8 @@
+#!/bin/bash
+
+diesel migration revert
+
+while [ $? -eq 0 ]
+do
+    diesel migration revert
+done

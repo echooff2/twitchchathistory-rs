@@ -1,0 +1,2 @@
+[global.databases]
+chat = { url = "postgres://twitchchathistory:password@localhost/chat" }

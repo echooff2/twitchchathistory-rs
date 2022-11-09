@@ -1,0 +1,18 @@
+channels = []
+
+#log level, possible values: Error, Warn, Info, Debug, Trace
+# log_level = "Trace"
+# log_level = "Error"
+log_level = "Info"
+
+database_op_retry_limit = 3
+
+[database]
+url = "localhost"
+username = "twitchchathistory"
+password = "password" # for production preferably use enviroment variable instead
+db = "chat"
+
+[twitch_api]
+# client_id = ""
+# client_secret = ""

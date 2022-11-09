@@ -1,0 +1,23 @@
+[package]
+name = "twitch_collector"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+common = { path = "../common" }
+diesel = { version = "1.4.8", features = ["postgres", "uuid"] }
+serde = { version = "1.0.137", features = ["derive"] }
+# twitchchat = { version = "0.14.8", features = ["async", "tokio", "tokio-util"] }
+twitch-irc = "4.0.0"
+anyhow = "1.0.57"
+dotenv = "0.15.0"
+tokio = { version = "1.19.2", features = ["full"] }
+serde_derive = "1.0.137"
+log = "0.4.17"
+env_logger = "0.9.0"
+chrono = "0.4.22"
+error-stack = "0.2.3"
+twitch_api2 = { version = "0.6.1", features = ["client", "reqwest", "helix"] }
+reqwest = "0.11.11"

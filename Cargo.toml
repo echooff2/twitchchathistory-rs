@@ -1,0 +1,32 @@
+# [package]
+# name = "twitchchathistory-rs"
+# version = "0.1.0"
+# edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+    "common",
+    "api",
+    "twitch_collector"
+]
+
+# [dependencies]
+# rocket = { version = "0.4.10" }
+# diesel = { version = "1.4.8", features = ["postgres", "uuid"] }
+# serde = { version = "1.0.137", features = ["derive"] }
+# twitchchat = { version = "0.14.8", features = ["async", "tokio", "tokio-util"] }
+# anyhow = "1.0.57"
+# dotenv = "0.15.0"
+# tokio = { version = "1.19.2", features = ["full"] }
+# config = "0.13.1"
+# lazy_static = "1.4.0"
+# serde_derive = "1.0.137"
+# log = "0.4.17"
+# env_logger = "0.9.0"
+
+# [dependencies.rocket_contrib]
+# version = "0.4.10"
+# default-features = false
+# features = ["diesel_postgres_pool", "json"]
