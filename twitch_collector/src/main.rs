@@ -17,7 +17,8 @@ mod twitch_watcher;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    dotenv::dotenv()?;
+    // TODO this panics when there is no .env file
+    dotenvy::dotenv()?;
     if let Err(err) = config::load().await {
         println!("{}", err);
         exit(1);

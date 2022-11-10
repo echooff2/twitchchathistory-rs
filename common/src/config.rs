@@ -185,7 +185,7 @@ fn load_config() -> error_stack::Result<Config, ConfigError> {
         .add_source(configlib::File::with_name("config.toml"))
         .add_source(configlib::Environment::with_prefix("TCH"))
         .build()
-        .into_report();
+        .into_report(); // todo not error out when config.toml is not present
 
     let config = config.map_err(|err| {
         let ctx = err.current_context().into();

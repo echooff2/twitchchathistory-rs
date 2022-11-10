@@ -12,7 +12,7 @@ serde = { version = "1.0.137", features = ["derive"] }
 # twitchchat = { version = "0.14.8", features = ["async", "tokio", "tokio-util"] }
 twitch-irc = "4.0.0"
 anyhow = "1.0.57"
-dotenv = "0.15.0"
+dotenvy = "0.15.6"
 tokio = { version = "1.19.2", features = ["full"] }
 serde_derive = "1.0.137"
 log = "0.4.17"
