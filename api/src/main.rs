@@ -20,7 +20,7 @@ extern crate log;
 struct ChatDbConn(diesel::PgConnection);
 
 fn main() -> anyhow::Result<()> {
-    dotenvy::dotenv()?;
+    let _ = dotenvy::dotenv();
 
     config::load_blocking()?;
 
