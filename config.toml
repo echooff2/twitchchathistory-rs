@@ -13,6 +13,6 @@ username = "twitchchathistory"
 password = "password" # for production preferably use enviroment variable instead
 db = "chat"
 
-[twitch_api]
-# client_id = ""
-# client_secret = ""
+[twitchapi]
+# clientid = ""
+# clientsecret = ""

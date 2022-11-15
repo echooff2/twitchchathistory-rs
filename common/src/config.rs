@@ -15,7 +15,8 @@ pub static CONFIG: RwLock<Config> = RwLock::const_new(Config::const_default());
 #[derivative(Default)]
 pub struct Config {
     pub database: DatabaseConfig,
-    pub twitch_api: TwitchApi,
+    // TODO change this back to twitch_api - probably will need to change config lib
+    pub twitchapi: TwitchApi,
     pub channels: Vec<String>,
     #[serde(default)]
     pub log_level: LogLevelFilter,
@@ -27,9 +28,9 @@ impl Config {
     const fn const_default() -> Self {
         Config {
             database: DatabaseConfig::const_default(),
-            twitch_api: TwitchApi {
-                client_id: String::new(),
-                client_secret: String::new(),
+            twitchapi: TwitchApi {
+                clientid: String::new(),
+                clientsecret: String::new(),
             },
             channels: vec![],
             log_level: LogLevelFilter::const_default(),
@@ -59,8 +60,10 @@ impl DatabaseConfig {
 
 #[derive(Default, Deserialize)]
 pub struct TwitchApi {
-    pub client_id: String,
-    pub client_secret: String,
+    // TODO change this back to twitch_api - probably will need to change config lib
+    pub clientid: String,
+    // TODO change this back to twitch_api - probably will need to change config lib
+    pub clientsecret: String,
 }
 
 #[repr(usize)]
@@ -183,7 +186,11 @@ pub fn load_blocking() -> error_stack::Result<(), ConfigError> {
 fn load_config() -> error_stack::Result<Config, ConfigError> {
     let config = configlib::Config::builder()
         .add_source(configlib::File::with_name("config.toml"))
-        .add_source(configlib::Environment::with_prefix("TCH"))
+        .add_source(
+            configlib::Environment::with_prefix("TCH")
+                .separator("_")
+                .try_parsing(true),
+        )
         .build()
         .into_report(); // todo not error out when config.toml is not present
 

@@ -89,8 +89,8 @@ pub async fn run(
 
     let token = AppAccessToken::get_app_access_token(
         &helix_client,
-        ClientId::new(config.twitch_api.client_id.clone()),
-        ClientSecret::new(config.twitch_api.client_secret.clone()),
+        ClientId::new(config.twitchapi.clientid.clone()),
+        ClientSecret::new(config.twitchapi.clientsecret.clone()),
         Scope::all(),
     )
     .await
